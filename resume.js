@@ -86,7 +86,7 @@ function contactDetails() {
     ])
 
     add([
-        text('Contact Number: 8826313566', 8, {width: 400}),
+        text('Contact Number: 8826******', 8, {width: 400}),
         pos(40, 240),
         layer('ui')
     ])
