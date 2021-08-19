@@ -1,7 +1,7 @@
 kaboom({
     global: true,
     fullscreen: true,
-    debug: true,
+    debug: false,
     scale: 1,
     clearColor: [0,0,0,1],
 })
@@ -11,7 +11,7 @@ var isJumping = true
 
 const FALL_DEATH = 1000
 
-loadSprite('boundary','https://i.imgur.com/pogC9x5.png')
+loadSprite('boundary','https://i.imgur.com/M6rwarW.png')
 loadSprite('mario','https://i.imgur.com/Wb1qfhK.png')
 loadSprite('flag','https://i.imgur.com/gh0q6EF.png')
 loadSprite('yellowblock','https://i.imgur.com/w3o4j31.png')
@@ -30,7 +30,13 @@ loadSprite('fence','https://i.imgur.com/l0LVwQl.png')
 loadSprite('fencerotate','https://i.imgur.com/T02EtnC.png')
 loadSprite('iimjobs','https://i.imgur.com/CLtjSvK.png')
 loadSprite('zebpay','https://i.imgur.com/8yxsJsL.jpg')
-loadSound("shoot", "https://soundcloud.com/oneseventy/jakka-b-x-tatsunoshin-someone-to-forget");
+loadSprite('cartoon','https://i.imgur.com/Puo4AaU.png')
+loadSprite('exit','https://i.imgur.com/EMaW7fs.png')
+loadSprite('pipe-top-left','https://i.imgur.com/ReTPiWY.png')
+loadSprite('pipe-top-right','https://i.imgur.com/hj2GK4n.png')
+loadSprite('pipe-bottom-left','https://i.imgur.com/c1cYSbt.png')
+loadSprite('pipe-bottom-right','https://i.imgur.com/nqQ79eI.png')
+loadSprite('college', 'https://i.imgur.com/yBfhM9g.png')
 
 // const music = play(shoot)
 
@@ -126,11 +132,37 @@ function experienceZebpay(){
     ])
 }
 
+//Publication
+function publications(){
+    add([
+        text('1.Blockchain Hands On for Developing Genesis Block - Springer', 8, {width:300}),
+        pos(3*width()+500,400)
+    ])
+
+    add([
+        text('2.Linking Technology To Reduce Suicide Ideation in Indian Farmers - IJIRMF', 8, {width: 300}),
+        pos(3*width()+500,440)
+    ])
+}
+
+//Responsibilities
+function responsibilities(){
+    add([
+        text('Graphics Head @ RITVA FOUNDATION', 8, {width:400}),
+        pos(2*width()+310, 400),
+    ])
+
+    add([
+        text('Co-coordinator at PIKAZO - Photography Club',8, {width:400}),
+        pos(2*width()+310, 420)
+    ])
+}
+
 scene("game", () => {
     layers(['bg', 'obj', 'ui'], 'obj')
 
     const map = [
-        '============================================================================================================================================================',                                                                            
+        '                     =======================================================================================================================================',                                                                            
         '=?                                                                    =                                                                                    =',                          
         '=                                                     --------------  =                                                                                    =',                                         
         '=                          &####&      &####&         -            -  =                                                                                    =',                                         
@@ -138,35 +170,35 @@ scene("game", () => {
         '=  ++++++++++++++++++  +++++++++++++++++++++++++++++++             -  =                                                                                    =',                                        
         '=                    +                                -            -  =                                                                                    =',                                        
         '=                     +                               --           -  =                                                                                    =',                                        
-        '=                      +                              - -  ))))))) -  =                                                                                    =',                                        
-        '=---------------        +                             -  -         -  =                                                                                    =',                                        
-        '=-             -         +                            --------------  =                                                                                    =',                                        
-        '=-             -          +                  &####&&####&             =                                                                                    =',                                        
-        '=-             [                                                      =  z                                                                                 =',                                        
-        '=-               +++++++++++++++++++  ++++++++++++++++++++++++++++++  =                                                                                    =',                                        
-        '=-                                   +                                =                                                                                    =',                                        
-        '=- ))))))))    -                    +                                 =                                                                                    =',                                        
-        '=-             -                   +                                  =                                                                                    =',                                        
-        '=---------------                  +                                   =                                                                                    =',                                        
-        '=                                +                                    = <>>>>>>>>>>>>>>>>>                                             i                   =',                                        
-        '=                               +         $   *   !                   = <                                                                                  =',                                        
-        '=                              +                                      = <                 |                                                                =',                                        
-        '=                                                                     = <                                                                                  =',                                        
-        '=               +++++++++++++++++++++++++++++++++++++                 = <                 ++++++++++++++++++++++++++                <>>>>>>>>>>>>>>>>>>    =',                                        
-        '=                                                                     = <                <                          +               <                   <  =',                                        
-        '=                                                                     = <             +  <                           +              <                   <  =',                                        
-        '=        --                                               -         % = <           +    <                            +             <                   <  =',                                       
-        '=       -                                                  -          = <                                              +                                <  =',                                        
-        '=      -                                                    -       ---  >>>>>>>>>>>>>>>>                               +           /                   <  =',                                        
-        '=     -                                                      -   -    -                                                                                 <  =',                                        
-        '=    -                                                        -     ---                                     ++++++++++++++++++++++                      <  =',                                        
-        '=    -                                                         --                                          +                       <                    <  =',                                        
-        '=    -                                                           -   ^                                    +                        <                    <  =',                                        
-        '=    -                                                                                                   +                          >>>>>>>>>>>>>>>>>>     =',                                        
-        '=    -                 :                                           ----++++++++++++++++++++++++++++++++++                                                  =',
-        '=    -                 @                                          -    =====================================================================================',
+        '=                      +                              - -  ))))))) -  =                                                                                    ======================================================  ================================================',                                        
+        '=---------------        +                             -  -         -  =                                                                                                                                                                                           =',                                        
+        '=-             -         +                            --------------  =                                                                                                                                                                                           =',                                        
+        '=-             -          +                  &####&&####&             =                                                                                                                                                                                           =',                                        
+        '=-             [                                                      =  z                                                                      ^                          ^                                                  ^     e                    lr       =',                                        
+        '=-               +++++++++++++++++++  ++++++++++++++++++++++++++++++  =                                                          &####&&####&&####&&####&&####&&####&&####&&####&                                                                        tb       =',                                        
+        '=-                                   +                                =                                                                                                                                                                                           =',                                        
+        '=- ))))))))    -                    +                                 =                                      +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     +++++++++++++++++++++++++++++++++++++++++++++++++    =',                                        
+        '=-             -                   +                                  =                                     +                                              =                                            +                                                         =',                                          
+        '=---------------                  +                                   =                                    +                                               =                                             +                                                        =',                                           
+        '=                                +                                    = <>>>>>>>>>>>>>>>>>                +                             i                  = -------------------                                                            --------------------- =',                                        
+        '=                               +         $   *   !                   = <                                +                                                 = -                 -                           +                                (                   - =',                                        
+        '=                              +                                      = <                 |             +                                                  = -                 {                          + +++++++++++++++++++++++++++++                       - =',                                        
+        '=                                                                     = <                                                                                  = -                                           +                               +++                    - =',                                        
+        '=               +++++++++++++++++++++++++++++++++++++                 = <                 ++++++++++++++++++++++++++                <>>>>>>>>>>>>>>>>>>    = -                                          +                                   -                   - =',                                        
+        '=                                                                     = <                <                          +               <                   <  = -   )))))))      ++++++++++++++++++++++++++                                    - + )))))))))       - =',                                        
+        '=                                                                     = <             +  <                           +              <                   <  = -                -                                                             -                   - =',                                        
+        '=        --                  c                            -         % = <           +    <                            +             <                   <  = ------------------                                                             --------------------- =',                                       
+        '=       -                                                  -          = <                                              +                                <  =                                                                                                      =',                                        
+        '=      -                                                    -       ---  >>>>>>>>>>>>>>>>                               +           /                   <  =                                                                                                      =',                                        
+        '=     -                                                      -   -    -                                                                                 <  =                                                                                                      =',                                        
+        '=    -                                                        -     ---                                     ++++++++++++++++++++++                      <  =                                                                                                      =',                                        
+        '=    -                                                         --                                          +                       <                    <  =                                                                                                      =',                                        
+        '=    -                                                           -   ^                                    +                        <                    <  =                                                                                                      =',                                        
+        '=    -                                                                                                   +                          >>>>>>>>>>>>>>>>>>     =                                                                                                      =',                                        
+        '=    -                 :                                           ----++++++++++++++++++++++++++++++++++                                                  =                                                                                                      =',
+        '=    -                 @                                          -    ============================================================================================================================================================================================',
         '=    -                                                           -    =',
-        '=    ------------------------------------------------------------     =',
+        '=    --------------------------------  --------------------------     =',
         '=                                                                     =',
         '=======================================================================',
     ]
@@ -175,9 +207,9 @@ scene("game", () => {
     const levelcfg = {
         width: 20,
         height: 20,
-        '=': [sprite('boundary')],
+        '=': [sprite('boundary'), solid()],
         '?': [sprite('flag'), scale(0.09)],
-        '+': [sprite('yellowblock'), scale(0.06), solid()],
+        '+': [sprite('yellowblock'),  solid(), scale(0.08)],
         '-': [sprite('unboxed'), solid()],
         ']': [sprite('door'), solid(), scale(0.2), 'door'],
         '[': [sprite('door-1'), solid(), scale(0.05),'door-1'],
@@ -196,11 +228,40 @@ scene("game", () => {
         '/': [sprite('door-1'), solid(), scale(0.05),'door-2'],
         '|': [sprite('door-1'), solid(), scale(0.05), 'door-3'],
         'i': [sprite('iimjobs'), scale(0.5)],
-        'z': [sprite('zebpay'), scale(0.4)]
+        'z': [sprite('zebpay'), scale(0.4)],
+        '(': [sprite('door-1'), solid(), scale(0.05), 'door-4'],
+        '{': [sprite('door-1'), solid(), scale(0.05), 'door-5'],
+        'e': [sprite('exit'), scale(0.1)],
+        'l': [sprite('pipe-top-left'), solid(), 'pipe'],
+        'r': [sprite('pipe-top-right'), solid(), 'pipe'],
+        't': [sprite('pipe-bottom-left'), solid(), 'pipe'],
+        'b': [sprite('pipe-bottom-right'), solid(), 'pipe'],
+        'c': [sprite('college'),scale(0.3)]
     }
 
     const resume = addLevel(map, levelcfg)
 
+    add([
+        text('S: To duck down', 8, {width: 400}),
+        pos(0,-70),
+        layer('ui')
+    ])
+
+    add([
+        text('A: Move left', 8, {width: 400}),
+        pos(0,-50),
+        layer('ui')
+    ])
+    add([
+        text('D: Move Right', 8, {width: 400}),
+        pos(0,-30),
+        layer('ui')
+    ])
+    add([
+        text('space: Jump', 8, {width: 400}),
+        pos(0,-10),
+        layer('ui')
+    ])
 
     add([
         text('Gamify Resume', 21, {width: 400}),
@@ -220,11 +281,49 @@ scene("game", () => {
         layer('ui')
     ])
 
+    add([
+        text('Cumultative GPA: 9.72/10.0', 12, {width: 400}),
+        pos(300, height()-200)
+    ])
+
+    add([
+        text('Graduation year: 2022', 12, {width: 400}),
+        pos(300, height()-150)
+    ])
+
+    add([
+        text('Degree : Btech', 12, {width: 400}),
+        pos(1000, height()-200)
+    ])
+
+    add([
+        text('Branch : CSE', 12, {width: 400}),
+        pos(1000, height()-150)
+    ])
+
+    add([
+        text('EXPERIENCE', 40, {width:600}),
+        pos(2*width() - 700, 30 ),
+        layer('ui')
+    ])
+
+    add([
+        text('PUBLICATIONS',18, {width:400}),
+        pos(3*width()+500,330),
+        layer('ui')
+    ])
+
+    add([
+        text('RESPONSIBILITIES', 18, {width:400}),
+        pos(2*width()+330, 330),
+        layer('ui')
+    ])
+
     
 
     const player = add([
         sprite('mario'), solid(),
-        pos(70,0),
+        pos(90,0),
         body(),
         origin('bot')
     ])
@@ -285,6 +384,16 @@ scene("game", () => {
         experienceZebpay()
     })
 
+    player.collides('door-4', (d)=> {
+        destroy(d)
+        publications()
+    })
+
+    player.collides('door-5', (d)=> {
+        destroy(d)
+        responsibilities()
+    })
+
     add([
         text('RESTART', 8 , {width:100}),
         pos(width()/2 + 600, height()/2 + 120),
@@ -338,8 +447,22 @@ scene("game", () => {
             go('game')
         }
     })
+
+    player.collides('pipe', () => {
+        keyDown('down', () => {
+            go('exit')
+        })
+    })
 })
 
+
+scene("exit", () => {
+    add([
+        text('THANK YOU FOR VISITING', 30, {width:800}),
+        pos(width()/2, height()/2)
+
+    ])
+})
 
 
 start("game")
